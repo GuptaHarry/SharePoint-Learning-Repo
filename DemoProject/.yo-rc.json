@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.20.8",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "harikrishna-demo-project",
+    "libraryId": "a805f8cb-8dd7-4d23-8060-51f272c5ef96",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "harikrishna-demo-project",
+    "solutionShortDescription": "harikrishna-demo-project description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
