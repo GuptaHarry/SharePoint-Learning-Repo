@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "harikrishna-hello-world-2-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/harikrishnaHelloWorld2/HarikrishnaHelloWorld2WebPart.js",
+          "manifest": "./src/webparts/harikrishnaHelloWorld2/HarikrishnaHelloWorld2WebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HarikrishnaHelloWorld2WebPartStrings": "lib/webparts/harikrishnaHelloWorld2/loc/{locale}.js"
+  }
+}

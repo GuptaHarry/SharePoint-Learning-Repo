@@ -7,21 +7,21 @@ import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import type { IReadonlyTheme } from '@microsoft/sp-component-base';
 import { escape } from '@microsoft/sp-lodash-subset';
 
-import styles from './HarikrishnaHelloworldWebPart.module.scss';
-import * as strings from 'HarikrishnaHelloworldWebPartStrings';
+import styles from './HarikrishnaHelloWorld2WebPart.module.scss';
+import * as strings from 'HarikrishnaHelloWorld2WebPartStrings';
 
-export interface IHarikrishnaHelloworldWebPartProps {
+export interface IHarikrishnaHelloWorld2WebPartProps {
   description: string;
 }
 
-export default class HarikrishnaHelloworldWebPart extends BaseClientSideWebPart<IHarikrishnaHelloworldWebPartProps> {
+export default class HarikrishnaHelloWorld2WebPart extends BaseClientSideWebPart<IHarikrishnaHelloWorld2WebPartProps> {
 
   private _isDarkTheme: boolean = false;
   private _environmentMessage: string = '';
 
   public render(): void {
     this.domElement.innerHTML = `
-    <section class="${styles.harikrishnaHelloworld} ${!!this.context.sdks.microsoftTeams ? styles.teams : ''}">
+    <section class="${styles.harikrishnaHelloWorld2} ${!!this.context.sdks.microsoftTeams ? styles.teams : ''}">
       <div class="${styles.welcome}">
         <img alt="" src="${this._isDarkTheme ? require('./assets/welcome-dark.png') : require('./assets/welcome-light.png')}" class="${styles.welcomeImage}" />
         <h2>Well done, ${escape(this.context.pageContext.user.displayName)}!</h2>
@@ -84,9 +84,7 @@ export default class HarikrishnaHelloworldWebPart extends BaseClientSideWebPart<
 
   protected onThemeChanged(currentTheme: IReadonlyTheme | undefined): void {
     if (!currentTheme) {
-
       return;
-      
     }
 
     this._isDarkTheme = !!currentTheme.isInverted;
