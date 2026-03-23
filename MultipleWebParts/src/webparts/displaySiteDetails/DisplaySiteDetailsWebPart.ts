@@ -10,6 +10,11 @@ import { escape } from '@microsoft/sp-lodash-subset';
 import styles from './DisplaySiteDetailsWebPart.module.scss';
 import * as strings from 'DisplaySiteDetailsWebPartStrings';
 
+import {
+  Environment,
+  EnvironmentType
+}
+ from '@microsoft/sp-core-library';
 export interface IDisplaySiteDetailsWebPartProps {
   description: string;
 }
@@ -34,6 +39,9 @@ export default class DisplaySiteDetailsWebPart extends BaseClientSideWebPart<IDi
                 <div class="${styles.displaySiteDetails}"> Relative URL <strong>${escape(this.context.pageContext.web.serverRelativeUrl)}</strong></div>
                 <div class="${styles.displaySiteDetails}"> User Name <strong>${escape(this.context.pageContext.user.displayName)}</strong></div>
                 <div class="${styles.displaySiteDetails}"> User Email <strong>${escape(this.context.pageContext.user.email)}</strong></div>
+                
+                   <div class="${styles.displaySiteDetails}"> User Type <strong>${Environment.type==2? "Online Sharepoint Environment" : "Local Environment"}</strong></div>
+                   <div class="${styles.displaySiteDetails}"> User Type <strong>${EnvironmentType.SharePoint>=0? "Online Sharepoint Environment" : "Local Environment"}</strong></div>
 
 
 
