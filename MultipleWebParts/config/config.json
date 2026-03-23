@@ -25,12 +25,21 @@
           "manifest": "./src/webparts/helloworld3/Helloworld3WebPart.manifest.json"
         }
       ]
+    },
+    "display-site-details-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/displaySiteDetails/DisplaySiteDetailsWebPart.js",
+          "manifest": "./src/webparts/displaySiteDetails/DisplaySiteDetailsWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "MultiplewebpartsWebPartStrings": "lib/webparts/multiplewebparts/loc/{locale}.js",
     "Helloworld2WebPartStrings": "lib/webparts/helloworld2/loc/{locale}.js",
-    "Helloworld3WebPartStrings": "lib/webparts/helloworld3/loc/{locale}.js"
+    "Helloworld3WebPartStrings": "lib/webparts/helloworld3/loc/{locale}.js",
+    "DisplaySiteDetailsWebPartStrings": "lib/webparts/displaySiteDetails/loc/{locale}.js"
   }
 }
