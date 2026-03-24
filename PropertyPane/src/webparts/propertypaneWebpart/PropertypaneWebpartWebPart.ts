@@ -206,7 +206,6 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
             }
           ]
         }
-       ]
-    };
+       ]};
   }
 }
