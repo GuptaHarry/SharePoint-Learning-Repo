@@ -1,7 +1,10 @@
 import { Version } from '@microsoft/sp-core-library';
 import {
   type IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  PropertyPaneTextField,
+  PropertyPaneToggle,
+  PropertyPaneSlider,
+  PropertyPaneChoiceGroup
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import type { IReadonlyTheme } from '@microsoft/sp-component-base';
@@ -18,6 +21,11 @@ export interface IPropertypaneWebpartWebPartProps {
   billamount:number;
   discount:number;
   netbillamount:number;
+  IsCertified : boolean;
+  currentTime : Date;
+  Rating : number;
+  processerType : string ;
+  invoiceFileType : string;
 }
 
 export default class PropertypaneWebpartWebPart extends BaseClientSideWebPart<IPropertypaneWebpartWebPartProps> {
@@ -37,6 +45,11 @@ export default class PropertypaneWebpartWebPart extends BaseClientSideWebPart<IP
       
       <table>
     
+       <tr>
+       <td>Current Time </td>
+       <td>${this.properties.currentTime}</td>
+       </tr>
+
        <tr>
        <td>Product Name </td>
        <td>${this.properties.productname}</td>
@@ -74,6 +87,43 @@ export default class PropertypaneWebpartWebPart extends BaseClientSideWebPart<IP
 
 
        </tr>
+       <tr>
+       <td>
+       Is Certified ? 
+       </td>
+       <td>
+       ${this.properties.IsCertified}
+       </td>
+       </tr>
+
+
+        <tr>
+       <td>
+         Rating
+       </td>
+       <td>
+       ${this.properties.Rating}
+       </td>
+       </tr>
+
+
+  <tr>
+       <td>
+         Processor Type
+       </td>
+       <td>
+       ${this.properties.processerType}
+       </td>
+       </tr>
+
+       <tr>
+       <td>
+         Processor Type
+       </td>
+       <td>
+       ${this.properties.invoiceFileType}
+       </td>
+       </tr>
 
 
 
@@ -89,6 +139,8 @@ export default class PropertypaneWebpartWebPart extends BaseClientSideWebPart<IP
          this.properties.productdescription="Mouse Description";
          this.properties.quantity=500;
          this.properties.productcost=300;
+         this.properties.IsCertified=false;
+         this.properties.currentTime= new Date();
          resolve(undefined);
     })
 
@@ -201,6 +253,66 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
                   },
                   placeholder : "Please enter product quantity" , "description" : "Number property field"
                 }),
+                PropertyPaneToggle ( 'IsCertified', {
+                     label:"Is Certified",
+                     onText:" ISI Certification Passed",
+                     offText:"Not Passed any certification",
+                     checked:false
+                }),
+                PropertyPaneSlider("Rating",{
+                  label:" Select your Rating",
+                  min:0,
+                  max:5,
+                  step:0.5,
+                  showValue:true,
+                  value:1
+                }),
+                PropertyPaneChoiceGroup("processorType",{
+                  label:"Choices",
+                  options :[
+                    { key:'I5' , text:"Intel I5"},
+                    { key:'I7' , text:"Intel I7" , checked:true},
+                    { key:'I9' , text:"Intel I9"},
+                  ]
+                }),
+                PropertyPaneChoiceGroup("invoiceFileType",{
+                  label:"Select Invoice File Type",
+                  options :[
+                    { key:'MSWord' , text:"MS Word",
+                      imageSrc:"https://freepnglogo.com/images/all_img/microsoft-word-b1ba.png",
+                      imageSize:{
+                        width: 32, height:32
+                      },
+                      selectedImageSrc:"https://freepnglogo.com/images/all_img/microsoft-word-b1ba.png"
+                    },
+                    { key:'MSExcel' , text:"MS Excel" , checked:true,
+                      imageSize:{
+                        width:32 , height:32
+                      },
+                      imageSrc:"https://tse1.mm.bing.net/th/id/OIP.VR1Qf7xZqlfBo2WUcl5wAwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
+                      selectedImageSrc:"https://tse1.mm.bing.net/th/id/OIP.VR1Qf7xZqlfBo2WUcl5wAwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
+                    },
+                    { key:'MSPowerPoint' , text:"MS PowerPoint",
+                      imageSize:{
+                        width:32,
+                        height:32
+                      },
+                      imageSrc:"https://th.bing.com/th/id/OIP.uVMkMeaYjAgxm-g87ByWAQHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
+                      selectedImageSrc:"https://th.bing.com/th/id/OIP.uVMkMeaYjAgxm-g87ByWAQHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
+                    },
+                    {
+                      key:'OneNote', text:"One Note",
+                      imageSrc:"https://i.pcmag.com/imagery/reviews/01YrB0BfeToE95hNrrXNbax-24..v1693256733.jpg",
+                      selectedImageSrc:"https://i.pcmag.com/imagery/reviews/01YrB0BfeToE95hNrrXNbax-24..v1693256733.jpg",
+                      imageSize:{
+                        height:32,
+                        width:32
+                      },
+          
+                    }
+                  ]
+                })
+                
                 
               ] 
             }
@@ -209,3 +321,4 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
        ]};
   }
 }
+
