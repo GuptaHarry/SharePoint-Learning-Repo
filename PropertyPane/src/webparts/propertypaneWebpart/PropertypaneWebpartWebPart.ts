@@ -4,7 +4,10 @@ import {
   PropertyPaneTextField,
   PropertyPaneToggle,
   PropertyPaneSlider,
-  PropertyPaneChoiceGroup
+  PropertyPaneChoiceGroup,
+  PropertyPaneDropdown,
+  PropertyPaneCheckbox,
+  PropertyPaneLink
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import type { IReadonlyTheme } from '@microsoft/sp-component-base';
@@ -26,6 +29,9 @@ export interface IPropertypaneWebpartWebPartProps {
   Rating : number;
   processerType : string ;
   invoiceFileType : string;
+  newProcessorType : string;
+  haveDiscount : boolean;
+  isFastServe : boolean;
 }
 
 export default class PropertypaneWebpartWebPart extends BaseClientSideWebPart<IPropertypaneWebpartWebPartProps> {
@@ -122,6 +128,37 @@ export default class PropertypaneWebpartWebPart extends BaseClientSideWebPart<IP
        </td>
        <td>
        ${this.properties.invoiceFileType}
+       </td>
+       </tr>
+
+
+       <tr>
+       <td>
+        New Processor Type
+       </td>
+       <td>
+       ${this.properties.newProcessorType}
+       </td>
+       </tr>
+
+       
+       <tr>
+       <td> 
+       Have Discout ? 
+       </td>
+       <td>
+       ${this.properties.haveDiscount}
+       </td>
+       </tr>
+
+
+        
+       <tr>
+       <td> 
+        Is this is a using fast-serve.
+       </td>
+       <td>
+       ${this.properties.isFastServe}
        </td>
        </tr>
 
@@ -267,7 +304,7 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
                   showValue:true,
                   value:1
                 }),
-                PropertyPaneChoiceGroup("processorType",{
+                PropertyPaneChoiceGroup("processerType",{
                   label:"Choices",
                   options :[
                     { key:'I5' , text:"Intel I5"},
@@ -311,6 +348,38 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
           
                     }
                   ]
+                }),
+                PropertyPaneDropdown('newProcessorType', {
+                  label:"New Processor Type",
+                  options : [
+                    {key : 'I5', text:'Intel I5'},
+                    {key :'I7' , text:'Intel I7'},
+                    {key: 'I9' , text:'Intel I9'}
+                  ],
+                  selectedKey : 'I7'
+                }),
+                PropertyPaneCheckbox("haveDiscount", {
+                  text: "Do you have a Discout Coupon",
+                  checked :false,
+                  disabled : false
+                }),
+                PropertyPaneLink( '',{
+                  text : 'Buy Intel Processor from best seller',
+                  href: 'https://www.amazon.in',
+                  target: '_blank',
+                  popupWindowProps : {
+                    height:500,
+                    width: 500, 
+
+                    positionWindowPosition : 2,
+                    title:'Amazon',
+
+                  }
+                }),
+                PropertyPaneCheckbox( 'isFastServe' , {
+                  text:'Is using Fast Serve',
+                  checked:false,
+                  disabled: false
                 })
                 
                 
