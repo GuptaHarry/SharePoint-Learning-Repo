@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "new-list-demo-client-side-solution",
+    "id": "60c74292-b526-4ef0-aacc-1011dcb8a2e7",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "NewListDemo description"
+      },
+      "longDescription": {
+        "default": "NewListDemo description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "new-list-demo Feature",
+        "description": "The feature that activates elements of the new-list-demo solution.",
+        "id": "59a9bae4-8a11-4eca-a88a-11fa07d48eb0",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/new-list-demo.sppkg"
+  }
+}
