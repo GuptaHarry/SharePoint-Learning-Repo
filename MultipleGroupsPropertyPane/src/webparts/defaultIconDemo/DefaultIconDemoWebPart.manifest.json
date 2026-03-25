@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "64b02416-f3e7-469a-9b0e-8dfb02206c9c",
+  "alias": "DefaultIconDemoWebPart",
+  "componentType": "WebPart",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart", "TeamsPersonalApp", "TeamsTab", "SharePointFullPage"],
+  "supportsThemeVariants": true,
+
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Advanced
+    "group": { "default": "Advanced" },
+    "title": { "default": "default-icon-demo" },
+    "description": { "default": "default-icon-demo description" },
+    // "officeFabricIconFontName": "PinSolid2",
+    "iconImageUrl": "https://public-cdn.sharepointonline.com/dprprod.sharepoint.com/sites/AppCatalog/ClientSideAssets/d0284592-322e-4286-a52f-20bd0b11b777/dprtoolboxlogo_4ef4774387d9e3e56a411bdf5f513ab7.png",
+    "properties": {
+      "description": "default-icon-demo"
+    }
+  }]
+}

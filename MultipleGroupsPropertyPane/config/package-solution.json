@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "multiple-group-pp-client-side-solution",
+    "id": "e4daf586-3dbe-4ffc-9f28-b5954d6670b2",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "multiple-group-pp description"
+      },
+      "longDescription": {
+        "default": "multiple-group-pp description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "multiple-group-pp Feature",
+        "description": "The feature that activates elements of the multiple-group-pp solution.",
+        "id": "19cb9e4d-125b-427a-ab82-e45e6a96e173",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/multiple-group-pp.sppkg"
+  }
+}

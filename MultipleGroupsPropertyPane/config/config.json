@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "multiple-group-pp-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/multipleGroupPp/MultipleGroupPpWebPart.js",
+          "manifest": "./src/webparts/multipleGroupPp/MultipleGroupPpWebPart.manifest.json"
+        }
+      ]
+    },
+    "default-icon-demo-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/defaultIconDemo/DefaultIconDemoWebPart.js",
+          "manifest": "./src/webparts/defaultIconDemo/DefaultIconDemoWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "MultipleGroupPpWebPartStrings": "lib/webparts/multipleGroupPp/loc/{locale}.js",
+    "DefaultIconDemoWebPartStrings": "lib/webparts/defaultIconDemo/loc/{locale}.js"
+  }
+}

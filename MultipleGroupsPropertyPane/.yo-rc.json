@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": false,
+    "nodeVersion": "18.20.8",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "multiple-group-pp",
+    "libraryId": "e4daf586-3dbe-4ffc-9f28-b5954d6670b2",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "multiple-group-pp",
+    "solutionShortDescription": "multiple-group-pp description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
