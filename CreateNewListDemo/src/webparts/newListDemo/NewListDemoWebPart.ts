@@ -1,206 +1,132 @@
 import { Version } from '@microsoft/sp-core-library';
 import {
-  type IPropertyPaneConfiguration,
+  IPropertyPaneConfiguration,
   PropertyPaneTextField
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
-import type { IReadonlyTheme } from '@microsoft/sp-component-base';
+//import { escape } from '@microsoft/sp-lodash-subset';
 
+// import styles from './NewListDemoWebPartStrings.module.scss';
 import * as strings from 'NewListDemoWebPartStrings';
 
-import {
-  SPHttpClient,
-  SPHttpClientResponse,
-  ISPHttpClientOptions
-} from '@microsoft/sp-http';
+import { SPHttpClient, SPHttpClientResponse, ISPHttpClientOptions } from '@microsoft/sp-http';
 
-export interface INewListDemoWebPartProps {
+export interface INewListCreationWpWebPartProps {
   description: string;
 }
 
-export default class NewListDemoWebPart extends BaseClientSideWebPart<INewListDemoWebPartProps> {
+export interface IListDefinition {
+  Title: string;
+  Description: string;
+  AllowContentTypes: boolean;
+  BaseTemplate: number;
+  ContentTypesEnabled: boolean;
+}
 
-  // @ts-expect-error - Used by framework but not in custom implementation
-  private _environmentMessage: string = '';
-  // @ts-expect-error - Used by framework but not in custom implementation
-  private _isDarkTheme: boolean = false;
+export default class NewListCreationWpWebPart extends BaseClientSideWebPart <INewListCreationWpWebPartProps> {
 
   public render(): void {
     this.domElement.innerHTML = `
-    <div>
-      <h3>Creating a new List Dynamically</h3>
-      <p>Please fill out the below details to create a new list</p>
+      <div>
 
-      <label>New List Name:</label><br/>
-      <input type="text" id="txtNewListName"/><br/><br/>
+      <h3>Creating a New List Dynamically</h3><br/><br/><br/>
 
-      <label>New List Description:</label><br/>
-      <input type="text" id="txtNewListDescription"/><br/><br/>
+      <p>Please fill out the below details to create a new list programatically </p><br/><br/>
+      
+      New List Name: <br/><input type='text' id='txtNewListName' /><br/><br/>
+  
+      New List Description: <br/><input type='text' id='txtNewListDescription'/><br/><br/>
+  
+      <input type="button" id="btnCreateNewList" value="Create a New List"/><br/>
 
-      <input type="button" id="btnCreateNewList" value="Create a new List"/><br/>
-    </div>
-    `;
+          </div>`;
 
-    this.bindEvents();
+          this.bindEvents();
   }
 
-  // 🔗 Bind button click
   private bindEvents(): void {
     const button = this.domElement.querySelector('#btnCreateNewList');
-
-    button?.addEventListener('click', () => {
-      this.createNewList();
-    });
+    if (button) {
+      button.addEventListener('click', () => { this.createNewList(); });
+    }
   }
 
-  // 🚀 Main logic
+
   private createNewList(): void {
-    const nameInput = this.domElement.querySelector<HTMLInputElement>("#txtNewListName");
-    const descInput = this.domElement.querySelector<HTMLInputElement>("#txtNewListDescription");
 
-    const newListName = nameInput?.value.trim() || '';
-    const newListDescription = descInput?.value.trim() || '';
+    //var newListName = document.getElementById("txtNewListName")["value"];
+    
+    //var newListDescription = document.getElementById("txtNewListDescription")["value"];
 
-    if (!newListName) {
-      alert("Please enter a list name.");
-      return;
-    }
+    const newListName = (document.getElementById("txtNewListName") as HTMLInputElement)?.value ?? '';
+    
+    const newListDescription = (document.getElementById("txtNewListDescription") as HTMLInputElement)?.value ?? '';
 
-    const checkUrl = `${this.context.pageContext.web.absoluteUrl}/_api/web/lists/GetByTitle('${newListName}')`;
 
-    // 🔍 Check if list exists
-    this.context.spHttpClient.get(checkUrl, SPHttpClient.configurations.v1)
+
+    const listUrl: string = this.context.pageContext.web.absoluteUrl + "/_api/web/lists/GetByTitle('" + newListName + "')";
+    
+    this.context.spHttpClient.get(listUrl, SPHttpClient.configurations.v1)
       .then((response: SPHttpClientResponse) => {
-
         if (response.status === 200) {
-          alert("List already exists.");
-          return;
+          alert("A List already does exist with this name.");
+          return; 
         }
-
         if (response.status === 404) {
-          this._createList(newListName, newListDescription);
+          const url: string = this.context.pageContext.web.absoluteUrl + "/_api/web/lists";
+
+          const listDefinition: IListDefinition = {
+            "Title": newListName,
+            "Description": newListDescription,
+            "AllowContentTypes": true,
+            "BaseTemplate": 100,
+            "ContentTypesEnabled": true,
+          };
+          const spHttpClientOptions: ISPHttpClientOptions = {
+            "body": JSON.stringify(listDefinition)
+          };
+          this.context.spHttpClient.post(url, SPHttpClient.configurations.v1, spHttpClientOptions)
+            .then((response: SPHttpClientResponse) => {
+              if (response.status === 201 ) {
+                alert("A new List has been created successfully.");
+              } else {
+                alert("Error Message  " + response.status + " - " + response.statusText);
+              }
+            }).catch( (error : Error )=>{
+              alert("Error Message. " + error);
+            });
+        } 
+        else {
+          alert("Error Message. " + response.status + " " + response.statusText);
         }
-
-      })
-      .catch(() => {
-        // If error → assume list doesn't exist
-        this._createList(newListName, newListDescription);
+      }).catch( (error : Error )=>{
+        alert("Error Message. " + error);
       });
-  }
-
-  // 📦 Create list
-  private _createList(name: string, description: string): void {
-
-    const url = `${this.context.pageContext.web.absoluteUrl}/_api/web/lists`;
-
-    const listDefinition = {
-      Title: name,
-      Description: description,
-      AllowContentTypes: true,
-      BaseTemplate: 100,
-      ContentTypesEnabled: true
-    };
-
-    const options: ISPHttpClientOptions = {
-      body: JSON.stringify(listDefinition)
-    };
-
-    this.context.spHttpClient.post(url, SPHttpClient.configurations.v1, options)
-      .then((response: SPHttpClientResponse) => {
-
-        if (response.status === 201) {
-          alert("List created successfully 🎉");
-        } else {
-          alert(`Error: ${response.status} - ${response.statusText}`);
-        }
-
-      })
-      .catch((error) => {
-        alert("Error creating list: " + error.message);
-      });
-  }
-
-  // 🌍 Environment setup
-  protected onInit(): Promise<void> {
-    return this._getEnvironmentMessage().then(message => {
-      this._environmentMessage = message;
-    });
-  }
-
-  private _getEnvironmentMessage(): Promise<string> {
-
-    if (!!this.context.sdks.microsoftTeams) {
-      return this.context.sdks.microsoftTeams.teamsJs.app.getContext()
-        .then(context => {
-          switch (context.app.host.name) {
-            case 'Office':
-              return this.context.isServedFromLocalhost
-                ? strings.AppLocalEnvironmentOffice
-                : strings.AppOfficeEnvironment;
-
-            case 'Outlook':
-              return this.context.isServedFromLocalhost
-                ? strings.AppLocalEnvironmentOutlook
-                : strings.AppOutlookEnvironment;
-
-            case 'Teams':
-            case 'TeamsModern':
-              return this.context.isServedFromLocalhost
-                ? strings.AppLocalEnvironmentTeams
-                : strings.AppTeamsTabEnvironment;
-
-            default:
-              return strings.UnknownEnvironment;
-          }
-        });
-    }
-
-    return Promise.resolve(
-      this.context.isServedFromLocalhost
-        ? strings.AppLocalEnvironmentSharePoint
-        : strings.AppSharePointEnvironment
-    );
-  }
-
-  // 🎨 Theme support
-  protected onThemeChanged(currentTheme: IReadonlyTheme | undefined): void {
-    if (!currentTheme) return;
-
-    this._isDarkTheme = !!currentTheme.isInverted;
-
-    const { semanticColors } = currentTheme;
-
-    if (semanticColors) {
-      this.domElement.style.setProperty('--bodyText', semanticColors.bodyText || '');
-      this.domElement.style.setProperty('--link', semanticColors.link || '');
-      this.domElement.style.setProperty('--linkHovered', semanticColors.linkHovered || '');
-    }
   }
 
   protected get dataVersion(): Version {
-    return Version.parse('1.0');
-  }
+  return Version.parse('1.0');
+}
 
-  // ⚙️ Property Pane
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
-    return {
-      pages: [
-        {
-          header: {
-            description: strings.PropertyPaneDescription
-          },
-          groups: [
-            {
-              groupName: strings.BasicGroupName,
-              groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
-                })
-              ]
-            }
-          ]
-        }
-      ]
-    };
-  }
+  return {
+    pages: [
+      {
+        header: {
+          description: strings.PropertyPaneDescription
+        },
+        groups: [
+          {
+            groupName: strings.BasicGroupName,
+            groupFields: [
+              PropertyPaneTextField('description', {
+                label: strings.DescriptionFieldLabel
+              })
+            ]
+          }
+        ]
+      }
+    ]
+  };
+}
 }

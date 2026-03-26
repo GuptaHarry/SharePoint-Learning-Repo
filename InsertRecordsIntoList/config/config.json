@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "insert-records-into-list-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/insertRecordsIntoList/InsertRecordsIntoListWebPart.js",
+          "manifest": "./src/webparts/insertRecordsIntoList/InsertRecordsIntoListWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "InsertRecordsIntoListWebPartStrings": "lib/webparts/insertRecordsIntoList/loc/{locale}.js"
+  }
+}

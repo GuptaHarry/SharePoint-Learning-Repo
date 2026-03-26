@@ -1,19 +1,19 @@
 {
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
-    "isCreatingSolution": false,
+    "isCreatingSolution": true,
     "nodeVersion": "18.20.8",
     "sdksVersions": {
       "@microsoft/microsoft-graph-client": "3.0.2",
       "@microsoft/teams-js": "2.12.0"
     },
     "version": "1.18.2",
-    "libraryName": "new-list-demo",
-    "libraryId": "60c74292-b526-4ef0-aacc-1011dcb8a2e7",
+    "libraryName": "insert-records-into-list",
+    "libraryId": "bccb4fce-8427-4f54-98f1-713c1842fc50",
     "environment": "spo",
     "packageManager": "npm",
-    "solutionName": "NewListDemo",
-    "solutionShortDescription": "NewListDemo description",
+    "solutionName": "insert-records-into-list",
+    "solutionShortDescription": "insert-records-into-list description",
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
     "componentType": "webpart"

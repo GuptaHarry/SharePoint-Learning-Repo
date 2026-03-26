@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "insert-records-into-list-client-side-solution",
+    "id": "bccb4fce-8427-4f54-98f1-713c1842fc50",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "insert-records-into-list description"
+      },
+      "longDescription": {
+        "default": "insert-records-into-list description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "insert-records-into-list Feature",
+        "description": "The feature that activates elements of the insert-records-into-list solution.",
+        "id": "7167571f-e260-4da3-b7bc-0af6499b912f",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/insert-records-into-list.sppkg"
+  }
+}

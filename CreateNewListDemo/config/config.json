@@ -9,10 +9,19 @@
           "manifest": "./src/webparts/newListDemo/NewListDemoWebPart.manifest.json"
         }
       ]
+    },
+    "new-sub-site-demo-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/newSubSiteDemo/NewSubSiteDemoWebPart.js",
+          "manifest": "./src/webparts/newSubSiteDemo/NewSubSiteDemoWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "NewListDemoWebPartStrings": "lib/webparts/newListDemo/loc/{locale}.js"
+    "NewListDemoWebPartStrings": "lib/webparts/newListDemo/loc/{locale}.js",
+    "NewSubSiteDemoWebPartStrings": "lib/webparts/newSubSiteDemo/loc/{locale}.js"
   }
 }
