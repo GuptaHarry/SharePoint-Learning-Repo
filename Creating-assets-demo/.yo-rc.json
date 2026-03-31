@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.20.8",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "creating-assests-demo",
+    "libraryId": "0c6801af-e72e-4fd5-884d-d15a4d3db62a",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "creating-assests-demo",
+    "solutionShortDescription": "creating-assests-demo description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "creating-assests-demo-client-side-solution",
+    "id": "0c6801af-e72e-4fd5-884d-d15a4d3db62a",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "creating-assests-demo description"
+      },
+      "longDescription": {
+        "default": "creating-assests-demo description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "sparefacts-creating-aasets-demo",
+        "description": "The feature that activates elements of the creating-assests-demo solution.",
+        "id": "71dd83a7-ebd3--886c-4e3a0705a28d",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "element.xml"
+          ],
+          "elementFiles": [
+            "schema.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/creating-assests-demo.sppkg"
+  }
+}

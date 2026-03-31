@@ -291,7 +291,6 @@ export default class InsertRecordsIntoListWebPart extends BaseClientSideWebPart 
   }
 
 
-  
   private addListItem(): void {
 
     const softwaretitle = (document.getElementById("txtSoftwareTitle") as HTMLInputElement)?.value ?? '';
@@ -311,7 +310,6 @@ export default class InsertRecordsIntoListWebPart extends BaseClientSideWebPart 
       "SoftwareDescription": softwareDescription,
       "SoftwareName": softwarename,
       "SoftwareVersion": softwareversion,
-     
     };
 
     
@@ -337,8 +335,8 @@ export default class InsertRecordsIntoListWebPart extends BaseClientSideWebPart 
     }).catch( ( err : Error)=>{
       alert("An error occured "+ err);
     });
-    
   }
+
 
   private clear(): void {
     const titleElement = document.getElementById("txtSoftwareTitle") as HTMLInputElement;

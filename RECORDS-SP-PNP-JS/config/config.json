@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "records-sp-pnp-js-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/recordsSpPnpJs/RecordsSpPnpJsWebPart.js",
+          "manifest": "./src/webparts/recordsSpPnpJs/RecordsSpPnpJsWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "RecordsSpPnpJsWebPartStrings": "lib/webparts/recordsSpPnpJs/loc/{locale}.js"
+  }
+}

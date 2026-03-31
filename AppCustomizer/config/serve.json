@@ -1,0 +1,65 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://dprprod.sharepoint.com/sites/HarikrishnaSPFxPractice/SitePages/Extension-Test-01.aspx",
+      "customActions": {
+        "285439c2-a8f1-4b8a-8f0b-1dddb0dba12c": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "Top": "header of the page",
+            "Bottom": "Footer of the page"
+          }
+        }
+      }
+    },
+    "appCustomizer": {
+      "pageUrl": "https://dprprod.sharepoint.com/sites/HarikrishnaSPFxPractice/SitePages/Extension-Test-01.aspx",
+      "customActions": {
+        "285439c2-a8f1-4b8a-8f0b-1dddb0dba12c": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "Top": "header of the page",
+            "Bottom": "Footer of the page"
+          }
+        }
+      }
+    },
+    "fieldCustomizer": {
+      "pageUrl": "https://dprprod.sharepoint.com/sites/HarikrishnaSPFxPractice/SitePages/Extension-Test-01.aspx",
+      "fieldCustomizers": {
+        "SoftwareVersion": {
+          "id": "2ec81a77-39e7-4ac2-82c5-eb4baad87037",
+          "properties": {
+            "sampleText": "Version - abc-"
+          }
+        }
+      }
+    },
+    "reactFieldCustomizer": {
+      "pageUrl": "https://dprprod.sharepoint.com/sites/HarikrishnaSPFxPractice/SitePages/Extension-Test-01.aspx",
+      "fieldCustomizers": {
+        "InternalFieldName": {
+          "id": "6a44a4d3-6d22-4489-b254-5714a222e8c7",
+          "properties": {
+            "sampleText": "Value"
+          }
+        }
+      }
+    },
+    "listViewCustomize": {
+      "pageUrl": "https://dprprod.sharepoint.com/sites/HarikrishnaSPFxPractice/SitePages/Extension-Test-01.aspx",
+      "customActions": {
+        "ea7f70ad-9f17-4d90-a7f5-eeec0500b4a0": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible."
+          }
+        }
+      }
+    }
+  }
+}

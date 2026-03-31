@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "app-customizer-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/appCustomizer/AppCustomizerApplicationCustomizer.js",
+          "manifest": "./src/extensions/appCustomizer/AppCustomizerApplicationCustomizer.manifest.json"
+        }
+      ]
+    },
+    "field-customizer-field-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/fieldCustomizer/FieldCustomizerFieldCustomizer.js",
+          "manifest": "./src/extensions/fieldCustomizer/FieldCustomizerFieldCustomizer.manifest.json"
+        }
+      ]
+    },
+    "react-field-customizer-field-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/reactFieldCustomizer/ReactFieldCustomizerFieldCustomizer.js",
+          "manifest": "./src/extensions/reactFieldCustomizer/ReactFieldCustomizerFieldCustomizer.manifest.json"
+        }
+      ]
+    },
+    "list-view-customize-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/listViewCustomize/ListViewCustomizeCommandSet.js",
+          "manifest": "./src/extensions/listViewCustomize/ListViewCustomizeCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AppCustomizerApplicationCustomizerStrings": "lib/extensions/appCustomizer/loc/{locale}.js",
+    "FieldCustomizerFieldCustomizerStrings": "lib/extensions/fieldCustomizer/loc/{locale}.js",
+    "ReactFieldCustomizerFieldCustomizerStrings": "lib/extensions/reactFieldCustomizer/loc/{locale}.js",
+    "ListViewCustomizeCommandSetStrings": "lib/extensions/listViewCustomize/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "library-usage-webpart-client-side-solution",
+    "id": "09bdf433-0935-4d38-b1aa-26d870620f5e",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "library-usage-webpart description"
+      },
+      "longDescription": {
+        "default": "library-usage-webpart description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "library-usage-webpart Feature",
+        "description": "The feature that activates elements of the library-usage-webpart solution.",
+        "id": "ad91b584-6810-4505-9d92-a5b39bc2e6e6",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/library-usage-webpart.sppkg"
+  }
+}

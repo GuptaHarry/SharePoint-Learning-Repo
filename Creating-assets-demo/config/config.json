@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "creating-assests-demo-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/creatingAssestsDemo/CreatingAssestsDemoWebPart.js",
+          "manifest": "./src/webparts/creatingAssestsDemo/CreatingAssestsDemoWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CreatingAssestsDemoWebPartStrings": "lib/webparts/creatingAssestsDemo/loc/{locale}.js"
+  }
+}

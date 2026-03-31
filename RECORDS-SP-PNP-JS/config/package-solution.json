@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "records-sp-pnp-js-client-side-solution",
+    "id": "0beaeaea-e93d-4c36-aa89-d59c1015ce3d",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "records-sp-pnp-js description"
+      },
+      "longDescription": {
+        "default": "records-sp-pnp-js description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "records-sp-pnp-js Feature",
+        "description": "The feature that activates elements of the records-sp-pnp-js solution.",
+        "id": "c4e7f5d1-666a-4ccd-b437-932cc2576454",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/records-sp-pnp-js.sppkg"
+  }
+}
