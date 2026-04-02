@@ -17,11 +17,38 @@
           "manifest": "./src/webparts/reactList/ReactListWebPart.manifest.json"
         }
       ]
+    },
+    "react-outside-api-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/reactOutsideApi/ReactOutsideApiWebPart.js",
+          "manifest": "./src/webparts/reactOutsideApi/ReactOutsideApiWebPart.manifest.json"
+        }
+      ]
+    },
+    "inside-react-api-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/insideReactApi/InsideReactApiWebPart.js",
+          "manifest": "./src/webparts/insideReactApi/InsideReactApiWebPart.manifest.json"
+        }
+      ]
+    },
+    "external-lib-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/externalLib/ExternalLibWebPart.js",
+          "manifest": "./src/webparts/externalLib/ExternalLibWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "ReactWebpaWebPartStrings": "lib/webparts/reactWebpa/loc/{locale}.js",
-    "ReactListWebPartStrings": "lib/webparts/reactList/loc/{locale}.js"
+    "ReactListWebPartStrings": "lib/webparts/reactList/loc/{locale}.js",
+    "ReactOutsideApiWebPartStrings": "lib/webparts/reactOutsideApi/loc/{locale}.js",
+    "InsideReactApiWebPartStrings": "lib/webparts/insideReactApi/loc/{locale}.js",
+    "ExternalLibWebPartStrings": "lib/webparts/externalLib/loc/{locale}.js"
   }
 }
