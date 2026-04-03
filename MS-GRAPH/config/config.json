@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "ms-graph-webpart-01-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/msGraphWebpart01/MsGraphWebpart01WebPart.js",
+          "manifest": "./src/webparts/msGraphWebpart01/MsGraphWebpart01WebPart.manifest.json"
+        }
+      ]
+    },
+    "ms-calendar-webpart-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/msCalendarWebpart/MsCalendarWebpartWebPart.js",
+          "manifest": "./src/webparts/msCalendarWebpart/MsCalendarWebpartWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "MsGraphWebpart01WebPartStrings": "lib/webparts/msGraphWebpart01/loc/{locale}.js",
+    "MsCalendarWebpartWebPartStrings": "lib/webparts/msCalendarWebpart/loc/{locale}.js"
+  }
+}

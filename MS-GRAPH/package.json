@@ -1,5 +1,5 @@
 {
-  "name": "react-webpart",
+  "name": "ms-graph-webparts",
   "version": "0.0.1",
   "private": true,
   "engines": {
@@ -20,16 +20,15 @@
     "@microsoft/sp-office-ui-fabric-core": "1.18.2",
     "@microsoft/sp-property-pane": "1.18.2",
     "@microsoft/sp-webpart-base": "1.18.2",
-    "@types/jquery": "^4.0.0",
-    "@types/jqueryui": "^1.12.24",
-    "jquery": "^4.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "tslib": "2.3.1"
   },
   "devDependencies": {
+    "@fluentui/react": "^8.106.4",
     "@microsoft/eslint-config-spfx": "1.18.2",
     "@microsoft/eslint-plugin-spfx": "1.18.2",
+    "@microsoft/microsoft-graph-types": "^2.43.1",
     "@microsoft/rush-stack-compiler-4.7": "0.1.0",
     "@microsoft/sp-build-web": "1.18.2",
     "@microsoft/sp-module-interfaces": "1.18.2",

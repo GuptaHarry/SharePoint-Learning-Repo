@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ms-graph-webparts-client-side-solution",
+    "id": "639169b0-8f0b-4a0a-adad-66e779c43b08",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "ms-graph-webparts description"
+      },
+      "longDescription": {
+        "default": "ms-graph-webparts description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "ms-graph-webparts Feature",
+        "description": "The feature that activates elements of the ms-graph-webparts solution.",
+        "id": "3f11cc51-c2ee-42b5-9c87-f8734ca20b22",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/ms-graph-webparts.sppkg"
+  }
+}
