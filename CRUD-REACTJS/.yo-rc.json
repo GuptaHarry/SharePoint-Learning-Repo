@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": false,
+    "nodeVersion": "18.20.8",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "version": "1.20.0",
+    "libraryName": "crud-reactjs",
+    "libraryId": "63ee3be9-1d82-4760-b405-9b199896c66a",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "crud-reactjs",
+    "solutionShortDescription": "crud-reactjs description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

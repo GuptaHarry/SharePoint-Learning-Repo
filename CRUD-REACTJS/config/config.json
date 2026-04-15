@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "crud-reactjs-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/crudReactjs/CrudReactjsWebPart.js",
+          "manifest": "./src/webparts/crudReactjs/CrudReactjsWebPart.manifest.json"
+        }
+      ]
+    },
+    "provider-webpart-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/providerWebpart/ProviderWebpartWebPart.js",
+          "manifest": "./src/webparts/providerWebpart/ProviderWebpartWebPart.manifest.json"
+        }
+      ]
+    },
+    "consumer-webpart-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/consumerWebpart/ConsumerWebpartWebPart.js",
+          "manifest": "./src/webparts/consumerWebpart/ConsumerWebpartWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CrudReactjsWebPartStrings": "lib/webparts/crudReactjs/loc/{locale}.js",
+    "ProviderWebpartWebPartStrings": "lib/webparts/providerWebpart/loc/{locale}.js",
+    "ConsumerWebpartWebPartStrings": "lib/webparts/consumerWebpart/loc/{locale}.js"
+  }
+}

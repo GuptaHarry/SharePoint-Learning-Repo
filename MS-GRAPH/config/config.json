@@ -17,11 +17,29 @@
           "manifest": "./src/webparts/msCalendarWebpart/MsCalendarWebpartWebPart.manifest.json"
         }
       ]
+    },
+    "react-user-lists-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/reactUserLists/ReactUserListsWebPart.js",
+          "manifest": "./src/webparts/reactUserLists/ReactUserListsWebPart.manifest.json"
+        }
+      ]
+    },
+    "react-isolated-webpart-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/reactIsolatedWebpart/ReactIsolatedWebpartWebPart.js",
+          "manifest": "./src/webparts/reactIsolatedWebpart/ReactIsolatedWebpartWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "MsGraphWebpart01WebPartStrings": "lib/webparts/msGraphWebpart01/loc/{locale}.js",
-    "MsCalendarWebpartWebPartStrings": "lib/webparts/msCalendarWebpart/loc/{locale}.js"
+    "MsCalendarWebpartWebPartStrings": "lib/webparts/msCalendarWebpart/loc/{locale}.js",
+    "ReactUserListsWebPartStrings": "lib/webparts/reactUserLists/loc/{locale}.js",
+    "ReactIsolatedWebpartWebPartStrings": "lib/webparts/reactIsolatedWebpart/loc/{locale}.js"
   }
 }
